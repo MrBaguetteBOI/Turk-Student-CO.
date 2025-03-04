@@ -1,0 +1,63 @@
+a. Belirli Kolonları Seçme
+Çalışanların sadece FirstName, LastName ve Salary bilgilerini getiren bir SQL sorgusu yazınız.
+
+Cevap:
+
+SELECT FirstName, LastName, Salary
+FROM Employees
+
+Hangi tablodan seçileceğini "FROM Employees" ile belirliyoruz ve "SELECT FirstName, LastName, Salary" ile sadece FirstName, LastName ve Salary bilgilerini getiriyoruz.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+b. DISTINCT Komutu ile Tekrarları Önleme
+Çalışanların çalıştıkları departmanları benzersiz olarak listeleyen bir SQL sorgusu yazınız.
+
+Cevap:
+
+SELECT DISTINCT DepartmentName
+FROM Employees
+JOIN Departments ON (Departments.DepartmentID = Employees.DepartmentID)
+
+Employees ve Departments tablolarını DepartmentID sütunu üzerinden ilişkilendiriyoruz ve oluşan yeni tablodan DepartmentName bilgilerini "DISTINCT" kullanarak tekrar etmeyecek şekilde getiriyoruz.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+c. Belirli Bir Departmana Ait Çalışanları Listeleme
+Sadece IT departmanında çalışanların bilgilerini getiren bir SQL sorgusu yazınız.
+
+Cevap:
+
+SELECT *
+FROM Employees
+WHERE DepartmentID = 1
+
+Employees tablosunu seçiyoruz ve DepartmentID'si 1 olan çalışanların hepsini getiriyoruz.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+d. Maaşa Göre Sıralama
+Çalışanları maaşlarına göre büyükten küçüğe sıralayan bir SQL sorgusu yazınız.
+
+Cevap:
+
+SELECT *
+FROM Employees
+ORDER BY salary DESC
+
+Employees tablosunu seçiyoruz ve "ORDER BY salary DESC" kullanarak maaşları büyükten küçüğe doğru sıralıyoruz.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+e. Kolonları Birleştirme (Concatenation)
+Çalışanların FirstName ve LastName alanlarını birleştirerek, tam adlarını içeren yeni bir kolon
+oluşturan bir SQL sorgusu yazınız.
+
+Cevap:
+
+SELECT CONCAT (FirstName, ' ', LastName) AS "FullName"
+FROM Employees
+
+Employees tablosunu seçiyoruz ve "CONCAT" kullanarak FirstName ve LastName sütunlarını birleştirerek FullName ismindeki yeni bir sütuna atıyoruz.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
